@@ -1,0 +1,725 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Sen", sans-serif;
+    
+  }
+  
+  .logo-container {
+    flex: 1;
+  
+  }
+  
+  .logo {
+    font-size: 30px;
+    color: #ffffff;
+  }
+  .logo span{
+    color:red;
+    font-weight:bolder;
+    font-size: 30px;
+  }
+  .menu-container {
+    flex: 6;  
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu-list-item {
+    margin-right: 30px;
+    color: white;
+    font-weight: bold;
+   
+  }
+  
+  .menu-list-item.active {
+    font-weight: bold;
+  }
+  .profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .profile-text-container {
+    margin: 0 20px;
+  }
+  
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .featured-content {
+    height: 50vh;
+    padding: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), 
+    url('Bohemian.jpg');
+  }
+  
+  .featured-title {
+    width: 200px;
+    padding: 60px 0px;
+  }
+  
+  .featured-desc {
+    width: 500px;
+    color: lightgray;
+    margin: 30px 0;
+  }
+  
+  .featured-button {
+    background-color: darkgray;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    transition: 0.5s all ease-in-out; 
+  }
+  
+  .movie-list-container {
+    padding: 0 20px;
+  }
+  
+  .movie-list-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+  
+  .movie-list-item {
+    margin-right: 30px;
+    position: relative;
+  }
+  
+  .movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+  }
+  
+  .movie-list-item:hover .movie-list-item-title,
+  .movie-list-item:hover .movie-list-item-desc,
+  .movie-list-item:hover .movie-list-item-button {
+    opacity: 1;
+  }
+  
+  .movie-list-item-img {
+    transition: all 1s ease-in-out;
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .movie-list-item-title {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position:absolute;
+    
+    top: 1%;
+    left: 30px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .movie-list-item-desc {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 11px;
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    width: 290px;
+    opacity: 0;
+    transition: 0.5s all ease-in-out;
+  }
+  
+  .movie-list-item-button {
+    padding: 10px;
+    background-color: darkgray;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0;
+    transition: 0.5s all ease-in-out;
+  }
+  
+  .arrow {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: greenyellow;
+    color: white;
+  }
+  
+  .back-video{
+    position: absolute;
+    right: 0;
+    bottom:0;
+  }
+ 
+  footer {
+    background-color: #292929;
+    text-align: center;
+    padding: 0.1rem 0;
+  }
+  
+  footer .socials {
+    padding: 5px;
+  }
+  
+  footer .socials a {
+    color: #ffffff;
+    margin: 1rem;
+  }
+  
+  footer .socials a:hover {
+    color: #fff;
+  }
+  
+  footer .credit {
+    font-size: 0.8rem;
+    color: white;
+  }
+  
+  footer .credit a {
+    font-weight: 700;
+  }
+
+  /* untuk iphone SE */
+  @media only screen and (min-width: 320px) {
+    .text{
+      font-size: 20px;
+      padding-top: 200px;
+    }
+    .menu-list-item{
+      font-size: 10px;
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+    .logo {
+      font-size: 20px;
+      margin-left: 0;
+    }
+    .logo span {
+      font-size: 20px;
+  
+    }
+    .navbar-container {
+      padding: 0 20px;
+    }
+    .profile-picture {
+      width: 25px;
+      height: 25px;
+    }
+    .profile-text-container {
+      margin: 0 10px;
+      font-size: 12px;
+    }
+    .container {
+      background-color: #151515;
+      min-height: calc(100vh - 50px);
+      color: white;
+    }
+    
+  
+     
+    
+    .featured-content {
+      height: 40vh;
+      padding: 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), 
+      url('Bohemian.jpg');
+    }
+    
+    .featured-title {
+      width: 150px;
+      padding: 60px 0px;
+    }
+    
+    .featured-desc {
+      width: 300px;
+      color: lightgray;
+      margin: 20px 0;
+      margin-top: -20px;
+      font-size: 10px;
+    }
+    
+    .featured-button {
+      width: 70px;
+      height: 30px;
+      background-color: darkgray;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-weight: bold;
+      transition: 0.5s all ease-in-out; 
+      font-size: 10px;
+      align-items: center;
+    }
+    
+    .movie-list-container {
+      padding: 0 20px;
+    }
+    .movie-list-title{
+      font-size: 20px;
+    }
+    .movie-list {
+      display: flex;
+      align-items: center;
+      height: 250px;
+      transform: translateX(0);
+      transition: all 1s ease-in-out;
+    }
+    
+    .movie-list-item {
+      margin-right: 30px;
+      position: relative;
+    }
+    
+    .movie-list-item:hover .movie-list-item-img {
+      transform: scale(1.2);
+      margin: 0 30px;
+      opacity: 0.5;
+    }
+    
+    
+    .movie-list-item-img {
+      transition: all 1s ease-in-out;
+      width: 270px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    
+    .movie-list-item-title {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 0 10px;
+      font-size: 20px;
+      font-weight: bold;
+      position:absolute;
+      
+      top: 1%;
+      left: 30px;
+      opacity: 0;
+      transition: 1s all ease-in-out;
+    }
+    
+    .movie-list-item-desc {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 5px;
+      font-size: 9px;
+      position: absolute;
+      top: 25%;
+      left: 10px;
+      width: 290px;
+      opacity: 0;
+      transition: 0.5s all ease-in-out;
+    }
+    
+    .movie-list-item-button {
+      padding: 10px;
+      background-color: darkgray;
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      bottom: 5px;
+      left: 20px;
+      opacity: 0;
+      transition: 0.5s all ease-in-out;
+      width: 70px;
+      height: 35px;
+    }
+    
+    .arrow {
+      font-size: 80px;
+      position: absolute;
+      top: 90px;
+      right: 0;
+      color: lightgray;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    
+  }
+  
+  /* utk ipad mini */
+  @media only screen and (min-width: 768px){
+  
+    .logo{
+      margin-left: 10px;
+    }
+    .menu-list-item{
+      margin-left: 10px;
+      margin-right: 20px;
+      font-size: 15px;
+    }
+    .container {
+      background-color: #151515;
+      min-height: calc(100vh - 50px);
+      color: white;
+    } 
+    
+    .featured-content {
+      height: 30vh;
+      padding: 20px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), 
+      url('Bohemian.jpg');
+    }
+    
+    .featured-title {
+      width: 200px;
+      padding-top: 80px;
+    }
+    
+    .featured-desc {
+      width: 600px;
+      color: lightgray;
+      margin: 30px 0;
+      margin-top: -30px;
+      font-size: 15px;
+    }
+    
+    .featured-button {
+      background-color: darkgray;
+      color: white;
+      padding: 1px 20px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-weight: bold;
+      transition: 0.5s all ease-in-out; 
+      width: 100px;
+      font-size: 15px;
+      justify-items: center;
+    }
+    
+    .movie-list-container {
+      padding: 0 20px;
+    }
+    
+    
+    .movie-list {
+      display: flex;
+      align-items: center;
+      height: 300px;
+      transform: translateX(0);
+      transition: all 1s ease-in-out;
+    }
+    .movie-list-title{
+      font-size: 30px;
+    }
+    .movie-list-item {
+      margin-right: 15px;
+      position: relative;
+    }
+    
+    
+    .movie-list-item-img {
+      transition: all 1s ease-in-out;
+      width: 290px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    
+    .movie-list-item-title {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 0 10px;
+      font-size: 32px;
+      font-weight: bold;
+      position:absolute;
+      
+      top: 1%;
+      left: 30px;
+      opacity: 0;
+      transition: 1s all ease-in-out;
+    }
+    
+    .movie-list-item-desc {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 11px;
+      position: absolute;
+      top: 25%;
+      left: 10px;
+      width: 290px;
+      opacity: 0;
+      transition: 0.5s all ease-in-out;
+    }
+    
+    .movie-list-item-button {
+      padding: 10px;
+      background-color: darkgray;
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      bottom: 5px;
+      left: 20px;
+      opacity: 0;
+      transition: 0.5s all ease-in-out;
+    }
+    
+    .arrow {
+      font-size: 120px;
+      position: absolute;
+      top: 90px;
+      right: 0;
+      color: lightgray;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: greenyellow;
+      color: white;
+    }
+    
+    .back-video{
+      position: absolute;
+      right: 0;
+      bottom:0;
+    }
+    
+  }
+  
+  /* utk desktop */
+  @media only screen and (min-width: 1000px){
+  
+    
+    .menu-list-item{
+      font-size: 15px;
+      margin-left: 0;
+      margin-right:30px;
+    }
+    .logo {
+      font-size: 30px;
+      margin-left: 20px;
+    }
+    .logo span {
+      font-size: 30px;
+    }
+    .navbar-container {
+      padding: 0 20px;
+    }
+    .profile-text-container {
+      margin: 0 20px;
+      font-size: 18px;
+    }
+    
+    .profile-picture {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .container {
+      background-color: #151515;
+      min-height: calc(100vh - 50px);
+      color: white;
+    }
+    
+    /* .content-container {
+      margin-left: 50px; 
+    } */
+      
+     
+    
+    .featured-content {
+      height: 50vh;
+      padding: 50px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), 
+      url('Bohemian.jpg');
+    }
+    
+    .featured-title {
+      width: 300px;
+      padding: 20px 0px;
+    }
+    
+    .featured-desc {
+      width: 500px;
+      font-size: 20px ;
+      color: lightgray;
+      margin: 30px 0;
+    }
+    
+    .featured-button {
+      background-color: darkgray;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-weight: bold;
+      transition: 0.5s all ease-in-out; 
+      height: 35px;
+    }
+    
+    .movie-list-container {
+      padding: 0 20px;
+    }
+    
+    .movie-list-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .movie-list {
+      display: flex;
+      align-items: center;
+      height: 300px;
+      transform: translateX(0);
+      transition: all 1s ease-in-out;
+    }
+    
+    .movie-list-item {
+      margin-right: 30px;
+      position: relative;
+    }
+    
+    .movie-list-item:hover .movie-list-item-img {
+      transform: scale(1.2);
+      margin: 0 30px;
+      opacity: 0.5;
+    }
+    
+    .movie-list-item:hover .movie-list-item-title,
+    .movie-list-item:hover .movie-list-item-desc,
+    .movie-list-item:hover .movie-list-item-button {
+      opacity: 1;
+    }
+    
+    .movie-list-item-img {
+      transition: all 1s ease-in-out;
+      width: 270px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    
+    .movie-list-item-title {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 0 10px;
+      font-size: 32px;
+      font-weight: bold;
+      position:absolute;
+      
+      top: 1%;
+      left: 30px;
+      opacity: 0;
+      transition: 1s all ease-in-out;
+    }
+    
+    .movie-list-item-desc {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 11px;
+      position: absolute;
+      top: 25%;
+      left: 10px;
+      width: 290px;
+      opacity: 0;
+      transition: 0.5s all ease-in-out;
+    }
+    
+    .movie-list-item-button {
+      padding: 10px;
+      background-color: darkgray;
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      bottom: 5px;
+      left: 20px;
+      opacity: 0;
+      transition: 0.5s all ease-in-out;
+    }
+    
+    .arrow {
+      font-size: 120px;
+      position: absolute;
+      top: 90px;
+      right: 0;
+      color: lightgray;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: greenyellow;
+      color: white;
+    }
+    
+    .back-video{
+      position: absolute;
+      right: 0;
+      bottom:0;
+    }
+    
+  }
